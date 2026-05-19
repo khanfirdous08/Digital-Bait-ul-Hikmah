@@ -1034,13 +1034,27 @@ export default function QuantumMerge() {
       display: "flex", alignItems: "center", justifyContent: "center",
       overflow: "hidden",
     }}>
-      {/* Game container — fixed game-pixel size, scaled by CSS */}
+      {/*
+        Two-layer scaling approach:
+        - Outer div is sized to the VISUAL (scaled) dimensions so flex centering
+          is based on how large the game actually looks on screen.
+        - Inner div is the native game size (GW×GH) and uses CSS scale() from
+          the top-left corner to fill the outer exactly.
+        This eliminates the "layout box ≠ visual box" mismatch that caused
+        off-center rendering when scale ≠ 1.
+      */}
       <div style={{
         position: "relative",
+        width: Math.floor(GW * scale),
+        height: Math.floor(GH * scale),
+        flexShrink: 0,
+      }}>
+      <div style={{
+        position: "absolute",
+        top: 0, left: 0,
         width: GW, height: GH,
         transform: `scale(${scale})`,
-        transformOrigin: "center center",
-        flexShrink: 0,
+        transformOrigin: "top left",
       }}>
         <canvas
           ref={canvasRef}
@@ -1133,32 +1147,7 @@ export default function QuantumMerge() {
           <AchievementToast def={toasts[0]} onDone={() => setToasts(prev => prev.slice(1))} />
         )}
 
-        {/* Evolution guide sidebar */}
-        <div style={{
-          position: "absolute", right: -72, top: "50%",
-          transform: "translateY(-50%)",
-          display: "flex", flexDirection: "column", gap: 5,
-          pointerEvents: "none",
-        }}>
-          {CUBE_NAMES.map((name, i) => {
-            const isActive = i === curLvl;
-            const done = i < curLvl;
-            return (
-              <div key={name} style={{
-                display: "flex", alignItems: "center", gap: 6,
-                opacity: isActive ? 1 : done ? 0.65 : 0.22,
-                transform: isActive ? "scale(1.08)" : "scale(1)",
-                transition: "all 0.3s",
-              }}>
-                <div style={{
-                  width: 9, height: 9, background: CUBE_COLORS[i], borderRadius: 1,
-                  boxShadow: isActive ? `0 0 10px ${CUBE_GLOW[i]}` : "none",
-                }} />
-                <span style={{ color: CUBE_COLORS[i], fontSize: 9, whiteSpace: "nowrap", fontFamily: "'Courier New',monospace", textShadow: isActive ? `0 0 6px ${CUBE_COLORS[i]}` : "none" }}>{name}</span>
-              </div>
-            );
-          })}
-        </div>
+      </div>
       </div>
     </div>
   );
