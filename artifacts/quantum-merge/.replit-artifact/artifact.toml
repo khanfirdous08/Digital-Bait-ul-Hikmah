@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Quantum Merge"
+version = "1.0.0"
+id = "artifacts/quantum-merge"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22647
+
+[services.development]
+run = "pnpm --filter @workspace/quantum-merge run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/quantum-merge", "run", "build" ]
+publicDir = "artifacts/quantum-merge/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22647"
+BASE_PATH = "/"
