@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Bait-ul-Hikmah</title>
+    <style>
+    body {
+        background-color: #f4f4f9;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 50px;
+    }
+    /* Ye naya card design hai */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    section {
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+    }
+    h2 { color: #2c3e50; margin-bottom: 10px; }
+    h1 { color: #2c3e50; }
+
+    /* Light Mode (Default) */
+body { background-color: #f4f4f9; color: #333; transition: 0.3s; }
+section { background: #ffffff; color: #333; }
+
+/* Dark Mode Logic */
+body.dark-mode { background-color: #1a1a1a; color: #f4f4f9; }
+body.dark-mode section { background: #2c3e50; color: #f4f4f9; }
+body.dark-mode nav { background: #34495e !important; }
+
+/* Links ko hamesha Black rakhein */
+nav a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+/* Link par mouse le jane par */
+nav a:hover {
+    color: #333333 !important;
+}
+
+/* Link click hone ke baad */
+nav a:visited {
+    color: #000000 !important;
+}
+
+</style>
+</head>
+<body>
+   <div style="background-color: #2c3e50; color: #ffffff; padding: 30px; text-align: center; border-bottom: 5px solid #e74c3c;">
+    <h1 style="margin: 0; font-weight: bold; color: #ffffff;">Bismillah-hir-Rahman-nir-Rahim</h1>
+    <p style="margin: 5px 0 0 0; font-weight: bold; color: #ffffff;"><em>"Innahu min Sulaimana wa innahu Bismillah-hir-Rahman-nir-Rahim"</em></p>
+    <p style="margin: 10px 0 0 0; font-weight: bold; color: #ffffff;">Welcome to Digital Bait-ul-Hikmah. InshaAllah, this will be a source of knowledge.</p>
+</div>
+
+
+<nav style="background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
+   
+  <strong>Digital Bait-ul-Hikmah Menu:</strong>
+<br><br>
+
+
+
+    <a href="#allah">Allah</a> | <a href="#nabi">Nabi</a> | <a href="#quran">Qur'an</a> | 
+    <a href="#namaz">Namaz</a> | <a href="#farishtay">Farishtay</a> | <a href="#sahaba">Sahaba</a> | 
+    <a href="#aimam">Aimam</a> | <a href="#auliya">Auliya</a> | <a href="#ummul-momineen">Ummul-Momineen</a> | 
+    <a href="#hadith">Hadith</a> | <a href="#wazifa">Wazifa</a> | <a href="#history">History</a>
+</nav>
+
+<div style="text-align: center; margin: 20px;">
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search topics here...">
+    <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+</div>
+
+
+<div class="container"> 
+
+<section id="quran">
+    <h2>Qur'an Section</h2>
+    <p>Content for Qur'an will be here...</p>
+    <audio controls>
+        <source src="quran_audio.mp3" type="audio/mpeg">
+    </audio>
+</section>
+
+<section id="hadith">
+    <h2>Hadith Section</h2>
+    <p>Content for Hadith will be here...</p>
+    <audio controls>
+        <source src="hadith_audio.mp3" type="audio/mpeg">
+    </audio>
+</section>
+<section id="allah-ke-naam">
+    <h2>Allah Ke Naam aur Fazeelat</h2>
+    <p>Allah ke mubarak naam aur unki fazeelat aur barkat.</p>
+    <audio controls><source src="allah_names.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section id="ambiya">
+    <h2>Anbiya-e-Kiram (Qasas-ul-Ambiya)</h2>
+    <p>Allah ke tamam nabi aur unki zindagi ke sabaq-amoz waqiyat.</p>
+    <audio controls><source src="ambiya.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section id="farishtay">
+    <h2>Farishtay (Malaika)</h2>
+    <p>Allah ke noorani makhlooq, unki haisiyat aur maqam.</p>
+    <audio controls><source src="farishtay.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section id="ummul-momineen">
+    <h2>Ummul-Momineen (Hamari Maa'en)</h2>
+    <p>Hazrat Khadija (R.A), Hazrat Aisha (R.A) aur tamami azwaj-e-mutahharat ki seerat-e-tayyaba.</p>
+    <audio controls><source src="ummul_momineen.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section id="wazifa">
+    <h2>Wazifa aur Barkat</h2>
+    <p>Mushkilat ke hal aur roohani sukoon ke liye wazaif.</p>
+    <audio controls>
+        <source src="wazifa_audio.mp3" type="audio/mpeg">
+    </audio>
+</section>
+
+<section id="namaz">
+    <h2>Talim-e-Namaz</h2>
+    <p>Namaz seekhein, aur apne rab se jud jayein.</p>
+    <audio controls>
+        <source src="namaz_audio.mp3" type="audio/mpeg">
+    </audio>
+</section>
+
+<section id="sahaba">
+    <h2>Sahaba-e-Kiram</h2>
+    <p>Sahaba-e-Kiram ki hayat aur unki azmat-e-shaan.</p>
+    <audio controls><source src="sahaba.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section id="aimma">
+    <h2>Aima-e-Deen</h2>
+    <p>Islam ke Azeem Aima aur unki ilmi khidmat.</p>
+    <audio controls><source src="aimma.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section id="auliya">
+    <h2>Auliya-e-Allah</h2>
+    <p>Auliya-e-Allah ki karamat aur unki roohani hayat.</p>
+    <audio controls><source src="auliya.mp3" type="audio/mpeg"></audio>
+</section>
+
+
+<section id="history">
+    <h2>History Section</h2>
+    <p>Content for History will be here...</p>
+    <audio controls>
+        <source src="history_audio.mp3" type="audio/mpeg">
+    </audio>
+</section> 
+</div>
+<footer style="margin-top: 50px; padding: 20px; background: #2c3e50; color: white; text-align: center; border-top: 5px solid #e74c3c;">
+    <p>&copy; 2026 Digital Bait-ul-Hikmah. All rights reserved.</p>
+    <p><em>"Jab bhi kisi ke liye dua karein, Darood Sharif parhna na bhoolen."</em></p>
+</footer>
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    function searchFunction() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let sections = document.getElementsByTagName('section');
+        for (let i = 0; i < sections.length; i++) {
+            let title = sections[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+            sections[i].style.display = title.includes(input) ? "" : "none";
+        }
+    }
+</script>
+
+</body>
+
+</html>
